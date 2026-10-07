@@ -13,7 +13,7 @@ class Faculty:
             print("Department: " + self.department)
 
     def enrolled_student(self):
-
+            self.id = input("Enter student ID: ")
 class Student:
     def __init__(self):
         self.id = ""
@@ -28,7 +28,7 @@ class Student:
         print("Name: " + self.name)
         print("Department: " + self.department)
     def assign_advisor(self):
-        self.advisor = input("Enter advisor: ")
+        self.advisor = faculty_id
 class Course:
     def __init__(self):
         self.number = ""
@@ -42,12 +42,28 @@ class Course:
         print("Number: " + self.number)
         print("Name: " + self.name)
         print("Department: " + self.department)
-    def teaching_faculty(self):
-
-    def enrolled_student(self):
-
+    def assign_faculty(self):
+        self.faculty = faculty_id
+    def register_student(self):
+        print("Student ID: " + self.faculty)
 myStudentList = []
 myFacultyList = []
 myCourseList = []
+fac= Faculty()
+fac.create_new_faculty()
+myFacultyList.append(fac)
+
+stu= Student()
+stu.create_new_student()
+
+faculty_id = input("Enter faculty ID: ")
+for x in myFacultyList:
+    if x.id == faculty_id:
+        stu.assign_advisor(x)
+myStudentList.append(stu)
+cou = Course()
+cou.create_new_course()
+cou.assign_faculty(faculty_id)
+myCourseList.append(cou)
 
 
