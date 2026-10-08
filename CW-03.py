@@ -3,6 +3,7 @@ class Faculty:
             self.id = ""
             self.name = ""
             self.department = ""
+            self.students = []
     def create_new_faculty(self):
             self.id = input("Enter faculty ID: ")
             self.name = input("Enter name: ")
@@ -13,7 +14,7 @@ class Faculty:
             print("Department: " + self.department)
 
     def enrolled_student(self):
-            self.id = input("Enter student ID: ")
+            self.students.append(student)
 class Student:
     def __init__(self):
         self.id = ""
@@ -29,11 +30,14 @@ class Student:
         print("Department: " + self.department)
     def assign_advisor(self):
         self.advisor = faculty_id
+        faculty.enroll_students(self)
 class Course:
     def __init__(self):
         self.number = ""
         self.name = ""
         self.department = ""
+        self.faculty_id = ""
+        self.students = []
     def create_new_course(self):
         self.number = input("Enter course number: ")
         self.name = input("Enter name: ")
@@ -45,7 +49,7 @@ class Course:
     def assign_faculty(self):
         self.faculty = faculty_id
     def register_student(self):
-        print("Student ID: " + self.faculty)
+        self.students.append(student)
 myStudentList = []
 myFacultyList = []
 myCourseList = []
