@@ -1,5 +1,3 @@
-import pickle
-
 class Customer:
     def __init__(self):
         self.cid = ''
@@ -21,12 +19,14 @@ class Customer:
         print('acc_no:', self.acc_no)
         print('balance:', self.balance)
         print('credit_card:', self.credit_card)
-    def transfer_funds(bene_cust_obj, amount):
-        self.balance = amount
-        bene_cust_obj.balance += amount
+    def transfer_funds(self, bene_cust_obj, amount):
+       self.balance = self.balance - amount
+        bene_cust_obj.balance = bene_cust_obj.balance + amount
+        print("Transfer successful!)
+
     def assign_card(selfcard_obj ):
         self.credit_card.append(card.obj)
-
+        print("Card assigned successfully!")
 class Card:
     def __init__(self):
         self.card_no = ''
@@ -57,15 +57,30 @@ while True:
     choice = int(input("Enter your choice: "))
 
     if choice == 1:
-        create_customer = Customer()
-        create_customer.create_customer()
+        customer = Customer()
+        customer.create_customer()
+        CustomerList.append(customer)
+        
     elif choice == 2:
-        create_card_obj = Card()
-        create_card_obj.add_card()
+        card= Card()
+        card.add_card()
+        CardList.append(card)
     elif choice == 3:
-        
+        for customer in CustomerList
+            print(customer.cname)
+        sender = int(input("Enter sender customer number: "))
+        receiver = int(input("Enter receiver customer number: "))
+        amount = float(input("Enter amount to transfer: "))
     elif choice == 4:
-        
+        for customer in CustomerList
+            print(customer.cname)
+        customer_num = int(input("Enter card number: ")
+        for card in CardList:
+            print(card..card_no)
+        card_num = int(input("Enter card number: ")
+        CustomerList[customer_num - 1].credit_card.appened(
+            CardList[card_num - 1])
+        print("Card assigned successfully)
     elif choice == 5:
         display_customer = Customer()
         display_customer.display_customer()
