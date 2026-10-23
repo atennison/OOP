@@ -71,6 +71,10 @@ while True:
         sender = int(input("Enter sender customer number: "))
         receiver = int(input("Enter receiver customer number: "))
         amount = float(input("Enter amount to transfer: "))
+         CustomerList[sender - 1].transfer_funds(
+            CustomerList[receiver - 1], amount
+        )
+
     elif choice == 4:
         for customer in CustomerList
             print(customer.cname)
