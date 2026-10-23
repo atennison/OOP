@@ -63,11 +63,9 @@ while True:
         create_card_obj = Card()
         create_card_obj.add_card()
     elif choice == 3:
-        print_card_obj = Card()
+        
     elif choice == 4:
-        display_customer = Customer()
-        display_customer.display_customer()
-
+        
     elif choice == 5:
         display_customer = Customer()
         display_customer.display_customer()
