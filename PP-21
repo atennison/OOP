@@ -1,0 +1,33 @@
+import streamlit as st
+from PIL import Image
+
+col1, col2 = st.columns((4, 5))
+
+with col1:
+	st.title("Justus Selwyn")
+	st.header("Prof., Computer Science")
+
+with col2:
+	image = Image.open('Justus-2026.JPG')
+	st.image(image, width=200)
+	
+
+st.balloons()
+st.snow()
+
+st.markdown("About Me")
+st.text("I am teaching OOP in the Fall 2026")
+st.divider()
+
+st.markdown("Qualifications")
+st.text("PhD in Computer Science")
+st.text("Masters in Computer Applications")
+st.divider()
+
+
+
+st.markdown("**Contact me:**")
+userName = st.text_input("Your Name:")
+userEmailId = st.text_input("Email ID:")
+userMessage = st.text_area("Your Message")
+st.button("Send Message")
